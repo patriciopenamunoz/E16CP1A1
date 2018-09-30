@@ -66,3 +66,11 @@ FROM users
 INNER JOIN calls ON(users.id = calls.user_id)
 WHERE users.id = 1
 ORDER BY calls.date ASC;
+
+-- A partir de la base anterior, agregar este requerimiento y modelar la
+-- base de datos (agregar print de pantalla [utilizar https://www.draw.io/]).
+CREATE TABLE audits(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  call_id INTEGER,
+  reason TEXT);
