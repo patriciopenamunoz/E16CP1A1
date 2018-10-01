@@ -71,6 +71,12 @@ ORDER BY calls.date ASC;
 -- base de datos (agregar print de pantalla [utilizar https://www.draw.io/]).
 CREATE TABLE audits(
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
+  date DATE,
+  reason TEXT,
+  user_id INTEGER,
+  user_first_name VARCHAR(65),
+  user_last_name VARCHAR(65),
+  user_email VARCHAR(65),
   call_id INTEGER,
-  reason TEXT);
+  call_phone VARCHAR(20),
+  call_date DATE);
